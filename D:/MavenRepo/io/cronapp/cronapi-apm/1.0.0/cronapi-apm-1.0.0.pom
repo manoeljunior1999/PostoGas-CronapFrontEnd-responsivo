@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>io.cronapp</groupId>
+    <artifactId>cronapi-apm</artifactId>
+    <packaging>jar</packaging>
+    <name>cronapi-apm</name>
+    <version>1.0.0</version>
+    <description>Public Java APM library for Cronapp's users</description>
+    <url>https://github.com/CronApp/cronapi-apm</url>
+    <build>
+        <resources>
+            <resource>
+                <directory>${project.basedir}</directory>
+                <includes>
+                    <include>postupdate.json</include>
+                </includes>
+            </resource>
+            <resource>
+                <directory>src/main/resources</directory>
+            </resource>
+        </resources>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.0.2</version>
+            </plugin>
+        </plugins>
+    </build>
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+            <version>${spring.boot.starter.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.micrometer</groupId>
+            <artifactId>micrometer-registry-prometheus</artifactId>
+            <version>${micrometer.version}</version>
+        </dependency>
+    </dependencies>
+    
+    <distributionManagement>
+        <repository>
+            <id>central</id>
+            <name>artifactory.cronapp.io-releases</name>
+            <url>https://artifactory.cronapp.io/public-release</url>
+        </repository>
+    </distributionManagement>
+    <properties>
+        <spring.boot.starter.version>2.0.1.RELEASE</spring.boot.starter.version>
+        <micrometer.version>1.0.3</micrometer.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+</project>

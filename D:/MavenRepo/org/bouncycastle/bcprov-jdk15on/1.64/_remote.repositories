@@ -1,0 +1,4 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Thu Jun 09 15:08:43 GMT 2022
+bcprov-jdk15on-1.64.jar>libs-release=
+bcprov-jdk15on-1.64.pom>libs-release=

@@ -1,0 +1,4 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Thu Jun 09 15:08:09 GMT 2022
+jakarta.xml.bind-api-2.3.2.jar>libs-release=
+jakarta.xml.bind-api-2.3.2.pom>libs-release=

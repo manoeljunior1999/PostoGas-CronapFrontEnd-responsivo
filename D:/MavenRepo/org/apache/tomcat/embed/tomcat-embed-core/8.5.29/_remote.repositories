@@ -1,0 +1,4 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Thu Jun 09 15:07:52 GMT 2022
+tomcat-embed-core-8.5.29.jar>libs-release=
+tomcat-embed-core-8.5.29.pom>libs-release=

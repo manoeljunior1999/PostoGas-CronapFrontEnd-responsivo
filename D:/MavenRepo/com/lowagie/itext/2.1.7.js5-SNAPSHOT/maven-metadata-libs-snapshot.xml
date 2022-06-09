@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+  <groupId>com.lowagie</groupId>
+  <artifactId>itext</artifactId>
+  <version>2.1.7.js5-SNAPSHOT</version>
+  <versioning>
+    <snapshot>
+      <timestamp>20180621.130240</timestamp>
+      <buildNumber>1</buildNumber>
+    </snapshot>
+    <lastUpdated>20180621130240</lastUpdated>
+    <snapshotVersions>
+      <snapshotVersion>
+        <extension>jar</extension>
+        <value>2.1.7.js5-20180621.130240-1</value>
+        <updated>20180621130240</updated>
+      </snapshotVersion>
+      <snapshotVersion>
+        <extension>pom</extension>
+        <value>2.1.7.js5-20180621.130240-1</value>
+        <updated>20180621130240</updated>
+      </snapshotVersion>
+    </snapshotVersions>
+  </versioning>
+</metadata>

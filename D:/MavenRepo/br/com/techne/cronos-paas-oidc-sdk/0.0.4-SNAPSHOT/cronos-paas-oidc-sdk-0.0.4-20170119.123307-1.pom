@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>br.com.techne</groupId>
+  <artifactId>cronos-paas-oidc-sdk</artifactId>
+  <version>0.0.4-SNAPSHOT</version>
+  <packaging>jar</packaging>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <jdk.version>1.8</jdk.version>
+    <jersey.version>2.22.2</jersey.version>
+  </properties>
+
+  <build>
+
+    <finalName>${project.artifactId}-${project.version}</finalName>
+
+    <plugins>
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.5.1</version>
+        <configuration>
+          <source>${jdk.version}</source>
+          <target>${jdk.version}</target>
+          <encoding>UTF-8</encoding>
+          <argLine>-Dfile.encoding=UTF-8</argLine>
+        </configuration>
+      </plugin>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-javadoc-plugin</artifactId>
+        <version>2.10.3</version>
+        <configuration>
+          <additionalparam>-Xdoclint:none</additionalparam>
+        </configuration>
+      </plugin>
+
+    </plugins>
+  </build>
+
+  <dependencies>
+
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.12</version>
+    </dependency>
+
+    <dependency>
+      <groupId>javax.servlet</groupId>
+      <artifactId>javax.servlet-api</artifactId>
+      <version>3.1.0</version>
+      <scope>provided</scope>
+    </dependency>
+
+    <!--
+      JAX-RS Jersey impl. for security context impl.
+     -->
+    <dependency>
+      <groupId>org.glassfish.jersey.containers</groupId>
+      <artifactId>jersey-container-servlet-core</artifactId>
+      <version>${jersey.version}</version>
+    </dependency>
+
+    <!--
+      Nimbus Dependencies:
+        https://bitbucket.org/connect2id/oauth-2.0-sdk-with-openid-connect-extensions/overview
+    -->
+    <dependency>
+      <groupId>com.nimbusds</groupId>
+      <artifactId>nimbus-jose-jwt</artifactId>
+      <version>4.4</version>
+    </dependency>
+
+    <dependency>
+      <groupId>com.nimbusds</groupId>
+      <artifactId>oauth2-oidc-sdk</artifactId>
+      <version>4.17</version>
+    </dependency>
+
+  </dependencies>
+
+  <!--
+    Repositório Techne (interno) de dependências de terceiros
+  -->
+  
+
+  <!--
+    Repositório para distribuição de artefatos da Plataforma Cronos
+  -->
+  <distributionManagement>
+
+    <repository>
+        <id>central</id>
+        <name>artifactory.cronapp.io-releases</name>
+        <url>https://artifactory.cronapp.io/libs-release-local</url>
+    </repository>
+
+    <snapshotRepository>
+        <id>snapshots</id>
+        <name>artifactory.cronapp.io-snapshots</name>
+        <url>https://artifactory.cronapp.io/libs-snapshot-local</url>
+    </snapshotRepository>
+
+  </distributionManagement>
+
+</project>

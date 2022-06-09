@@ -1,0 +1,4 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Thu Jun 09 15:08:35 GMT 2022
+quartz-2.3.0.jar>libs-release=
+quartz-2.3.0.pom>libs-release=

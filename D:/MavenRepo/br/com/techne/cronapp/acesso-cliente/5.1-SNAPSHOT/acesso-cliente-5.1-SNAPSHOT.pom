@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+	<groupId>br.com.techne.cronapp</groupId>
+	<artifactId>acesso-cliente</artifactId>
+	<version>5.1-SNAPSHOT</version>
+	<packaging>jar</packaging>
+
+	<url>https://github.com/technecloud/cronapp-acesso-cliente</url>
+	<organization>
+        <name>Techne Engenharia e Sistemas</name>
+    </organization>	
+
+    <name>CronApp Acesso Cliente</name>
+    <description>Abstração para consume da API do módulo de Acesso</description>
+
+    <properties>
+        <java.version>1.8</java.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    </properties>
+
+	<dependencies>
+		<!-- https://mvnrepository.com/artifact/javax.xml.bind/jaxb-api -->
+		<dependency>
+			<groupId>javax.xml.bind</groupId>
+			<artifactId>jaxb-api</artifactId>
+			<version>2.2.12</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/javax.ws.rs/javax.ws.rs-api -->
+		<dependency>
+			<groupId>javax.ws.rs</groupId>
+			<artifactId>javax.ws.rs-api</artifactId>
+			<version>2.1-m01</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/commons-codec/commons-codec -->
+		<dependency>
+			<groupId>commons-codec</groupId>
+			<artifactId>commons-codec</artifactId>
+			<version>1.10</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/junit/junit -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.12</version>
+			<scope>test</scope>
+		</dependency>
+
+
+        <!-- Jersey -->
+        <dependency>
+            <groupId>org.glassfish.jersey.core</groupId>
+            <artifactId>jersey-server</artifactId>
+            <version>2.30.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.glassfish.jersey.containers</groupId>
+            <artifactId>jersey-container-servlet-core</artifactId>
+            <version>2.30.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.glassfish.jersey.containers</groupId>
+            <artifactId>jersey-container-servlet</artifactId>
+            <version>2.30.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.glassfish.jersey.media</groupId>
+            <artifactId>jersey-media-json-jackson</artifactId>
+            <version>2.30.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.glassfish.jersey.media</groupId>
+            <artifactId>jersey-media-moxy</artifactId>
+            <version>2.30.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.glassfish.jersey.media</groupId>
+            <artifactId>jersey-media-multipart</artifactId>
+            <version>2.30.1</version>
+        </dependency>
+        <!-- Jersey -->
+
+        <!-- https://mvnrepository.com/artifact/com.google.code.gson/gson -->
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>2.8.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>br.com.techne</groupId>
+            <artifactId>cronos-paas-oidc-sdk</artifactId>
+            <version>0.0.4-SNAPSHOT</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.bouncycastle</groupId>
+                    <artifactId>*</artifactId>
+                </exclusion>
+            </exclusions>
+            <scope>test</scope>
+        </dependency>
+
+
+    </dependencies>
+	
+	
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                </configuration>
+            </plugin>
+            <!-- Garantindo ordem dos testes -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.19.1</version>
+                <configuration>
+                    <includes>
+                        <include>AllTests.java</include>
+                    </includes>
+                </configuration>
+            </plugin>
+            <!-- Garantindo ordem dos testes -->
+
+            <!-- Documentador -->
+
+            <!-- Documentador -->
+
+        </plugins>
+        
+    </build>
+
+	<!-- Techne Artifactory -->
+	<distributionManagement>
+	    <repository>
+	        <id>central</id>
+	        <name>artifactory.cronapp.io-releases</name>
+	        <url>https://artifactory.cronapp.io/libs-release-local</url>
+	    </repository>
+	    <snapshotRepository>
+	        <id>snapshots</id>
+	        <name>artifactory.cronapp.io-snapshots</name>
+	        <url>https://artifactory.cronapp.io/libs-snapshot-local</url>
+	    </snapshotRepository>
+	</distributionManagement>
+	<!-- Techne Artifactory -->
+
+    	
+</project>
